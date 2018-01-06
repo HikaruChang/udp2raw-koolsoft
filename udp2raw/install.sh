@@ -24,7 +24,7 @@ dbus set softcenter_module_udp2raw_description=UDP流量突破隧道
 dbus set softcenter_module_udp2raw_install=1
 dbus set softcenter_module_udp2raw_name=udp2raw
 dbus set softcenter_module_udp2raw_title=udp2raw
-dbus set softcenter_module_udp2raw_version=20171125
+dbus set softcenter_module_udp2raw_version=20180107
 
 # make udp2raw restart/stop to apply change
 sh /koolshare/scripts/udp2raw_config.sh
