@@ -39,7 +39,7 @@ get_lower_mode(){
 start_udp2raw(){
 	[ -n "$udp2raw_cipher" ] && cipher_mode="--cipher-mode $udp2raw_cipher" || cipher_mode=""
 	[ -n "$udp2raw_auth" ] && auth_mode="--auth-mode $udp2raw_auth" || auth_mode=""
-	udp2raw -c -l 0.0.0.0:$udp2raw_local -r $udp2raw_server:$udp2raw_port -k "\"$udp2raw_passwd\"" $(get_iptables_mode $udp2raw_iptables) $(get_keep_mode $udp2raw_keep) $(get_lower_mode $udp2raw_lower) $cipher_mode $auth_mode --raw-mode $udp2raw_mode $udp2raw_custom >/dev/null 2>&1 &
+	udp2raw -c -l 0.0.0.0:$udp2raw_local -r $udp2raw_server:$udp2raw_port -k "$udp2raw_passwd" $(get_iptables_mode $udp2raw_iptables) $(get_keep_mode $udp2raw_keep) $(get_lower_mode $udp2raw_lower) $cipher_mode $auth_mode --raw-mode $udp2raw_mode $udp2raw_custom >/dev/null 2>&1 &
 }
 
 stop_udp2raw(){
