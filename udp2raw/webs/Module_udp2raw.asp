@@ -119,7 +119,7 @@ function save(){
 }
 </script>
 <div class="box">
-<div class="heading">udp2raw 20180225 <a href="#/soft-center.asp" class="btn" style="float:right;border-radius:3px;margin-right:5px;margin-top:0px;">返回</a></div>
+<div class="heading">udp2raw 20181113.0 <a href="#/soft-center.asp" class="btn" style="float:right;border-radius:3px;margin-right:5px;margin-top:0px;">返回</a></div>
 <div class="content">
 	<span class="col" style="line-height:30px;width:700px">
   <li>Program:wangyu-</li>
@@ -145,8 +145,8 @@ $('#udp2raw-fields').forms([
 { title: '本地端口', name: 'udp2raw_local', type: 'text', maxlen: 10, size: 10, value: Apps.udp2raw_local || "7777"},
 { title: '密码', name: 'udp2raw_passwd', type: 'text', maxlen: 50, size: 50, value: Apps.udp2raw_passwd },
 { title: '模式', name:'udp2raw_mode',type:'select',options:[['faketcp','faketcp'],['udp','udp'],['icmp','icmp']],value: Apps.udp2raw_mode || "faketcp", suffix: 'raw-mode 默认:faketcp' },
-{ title: '加密模式', name:'udp2raw_cipher',type:'select',options:[['aes128cbc','aes128cbc'],['xor','xor'],['','无']],value: Apps.udp2raw_cipher || "", suffix: 'cipher-mode 默认:aes128cbc' },
-{ title: '校验模式', name:'udp2raw_auth',type:'select',options:[['md5','md5'],['crc32','crc32'],['icmp','icmp'],['simple','simple'],['','无']],value: Apps.udp2raw_auth || "" , suffix: 'auth-mode 默认:md5' },
+{ title: '加密模式', name:'udp2raw_cipher',type:'select',options:[['aes128cbc','aes128cbc'],['xor','xor'],['none','none'],['','默认']],value: Apps.udp2raw_cipher || "", suffix: 'cipher-mode 默认:aes128cbc' },
+{ title: '校验模式', name:'udp2raw_auth',type:'select',options:[['md5','md5'],['crc32','crc32'],['icmp','icmp'],['simple','simple'],['none','none'],['','默认']],value: Apps.udp2raw_auth || "" , suffix: 'auth-mode 默认:md5' },
 { title: '程序退出保留防火墙规则', name: 'udp2raw_iptables', type: 'checkbox', value: ((Apps.udp2raw_iptables == '1')? 1:0), suffix: '开启后防火墙规则需要自己手动添加，规则不会在udp2raw退出时被删掉，可以避免停掉udp2raw后内核向对端回复RST。'},
 { title: '定期检查iptables防火墙规则', name: 'udp2raw_keep', type: 'checkbox', value: ((Apps.udp2raw_keep == '1')? 1:0), suffix: '开启后定期主动检查iptables，如果udp2raw添加的iptables规则丢了，就重新添加。'},
 { title: '绕过本地iptables', name: 'udp2raw_lower', type: 'checkbox', value: ((Apps.udp2raw_lower == '1')? 1:0), suffix: '允许绕过本地iptables，在一些iptables不好改动的情况下尤其有效'},
